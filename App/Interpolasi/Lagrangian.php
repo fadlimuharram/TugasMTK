@@ -13,9 +13,12 @@ class Lagrangian{
     $this->dataFx = $dataFx;
   }
 
-  function hasil(){
+  function hitung(){
     $this->isExistBetween();
     $this->cariTigaAngka();
+  }
+
+  function getTigaAngka(){
     return $this->getTigaAngka;
   }
 
