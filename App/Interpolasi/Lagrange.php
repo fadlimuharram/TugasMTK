@@ -1,7 +1,7 @@
 <?php
 namespace App\Interpolasi;
 
-class Lagrangian{
+class Lagrange{
 
   private $data = array();
   private $dataFx;

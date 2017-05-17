@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once"vendor/autoload.php";
+define('BaseURL','http://localhost/matematika/');
 /*
 use App\Interpolasi\Lagrangian as lg;
 $taz = ["0"=>"0","10"=>"227.04","15"=>"362.78","20"=>"517.35","22.5"=>"602.97","30"=>"901.62"];
@@ -26,22 +27,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Starter</title>
+  <title>Tugas| MTK</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="Asset/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?=BaseURL;?>Asset/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="Asset/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="<?=BaseURL;?>Asset/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect.
   -->
-  <link rel="stylesheet" href="Asset/dist/css/skins/skin-purple.min.css">
+  <link rel="stylesheet" href="<?=BaseURL;?>Asset/dist/css/skins/skin-purple.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -79,9 +80,9 @@ desired effect
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>TGS</b>MTK</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Tugas</b>MTK</span>
     </a>
 
     <!-- Header Navbar -->
@@ -195,7 +196,7 @@ desired effect
               <!-- The user image in the navbar-->
               <img src="Asset/dist/img/avatar04.png" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Tugas Matematika</span>
+              <span class="hidden-xs">Fadli Muharram</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -203,7 +204,7 @@ desired effect
                 <img src="Asset/dist/img/avatar04.png" class="img-circle" alt="User Image">
 
                 <p>
-                  Tugas Matematika - Web Developer
+                  Fadli Muharram - Web Developer
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -253,7 +254,7 @@ desired effect
           <img src="Asset/dist/img/avatar04.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Tugas Matematika</p>
+          <p>Fadli Muharram</p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
@@ -264,7 +265,8 @@ desired effect
       <ul class="sidebar-menu">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="index.php"><i class="fa fa-home"></i> <span>Lagrangian</span></a></li>
+        <li class="active"><a href="index.php"><i class="fa fa-home"></i> <span>Lagrange</span></a></li>
+        <!--
         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
@@ -276,7 +278,7 @@ desired effect
             <li><a href="#">Link in level 2</a></li>
             <li><a href="#">Link in level 2</a></li>
           </ul>
-        </li>
+        </li>-->
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -292,11 +294,11 @@ desired effect
 
       <?php
       if (isset($_GET['halaman'])) {
-        if ($_GET['halaman'] == 'hasillagrangian') {
-          include_once"Layout/HasilLagrangian.php";
+        if ($_GET['halaman'] == 'hasilLagrange') {
+          include_once"Layout/HasilLagrange.php";
         }
       }else {
-        include_once"Layout/Lagrangian.php";
+        include_once"Layout/Lagrange.php";
       }
        ?>
 
@@ -397,12 +399,12 @@ desired effect
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 2.2.3 -->
-<script src="Asset/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="<?=BaseURL;?>Asset/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="Asset/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?=BaseURL;?>Asset/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
-<script src="Asset/dist/js/app.min.js"></script>
-<script src="Asset/My.js"></script>
+<script src="<?=BaseURL;?>Asset/dist/js/app.min.js"></script>
+<script src="<?=BaseURL;?>Asset/My.js"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the

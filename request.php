@@ -34,18 +34,19 @@ if (isset($_POST['kirimLagrangian'])) {
       $data[$xdata[$i]] = $ydata[$i];
     }
 
-    $LG = new App\Interpolasi\Lagrangian($data,$_POST['datafx']);
+    $LG = new App\Interpolasi\Lagrange($data,$_POST['datafx']);
     $LG->hitung();
 
     $_SESSION['datainput'] = $data;
     $_SESSION['sorted_data'] = $LG->getSortArray();
     $_SESSION['tigaAngkaDekat'] = $LG->getTigaAngka();
     $_SESSION['hasil'] = $LG->FX_Hasil();
+    $_SESSION['XDicari'] = $_POST['datafx'];
   }else {
     $_SESSION['errdata'] = "Harap Masukan Dengan Benar";
   }
 
-  header('Location: index.php?halaman=hasillagrangian');
+  header('Location: index.php?halaman=hasilLagrange');
 }
 
  ?>
