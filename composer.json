@@ -1,0 +1,10 @@
+{
+    "name": "azurescarlet/matematika",
+    "description": "Beberapa Materi Kuliah MTK",
+    "require": {},
+    "autoload":{
+      "psr-4":{
+        "App\\":"App"
+      }
+    }
+}
