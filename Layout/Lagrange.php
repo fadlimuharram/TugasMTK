@@ -20,8 +20,7 @@
             <label class="col-md-2 control-label" for="pilihjml">Jumlah Data</label>
             <div class="col-md-3">
               <select id="pilihjml" name="pilihjml" class="form-control">
-                <option value="1">1</option>
-                <option value="2">2</option>
+                <option value="pilih">Pilih</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>

@@ -71,7 +71,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-purple sidebar-mini">
+<body class="hold-transition skin-purple fixed">
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -196,7 +196,7 @@ desired effect
               <!-- The user image in the navbar-->
               <img src="Asset/dist/img/avatar04.png" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Fadli Muharram</span>
+              <span class="hidden-xs">Matematika</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -204,7 +204,7 @@ desired effect
                 <img src="Asset/dist/img/avatar04.png" class="img-circle" alt="User Image">
 
                 <p>
-                  Fadli Muharram - Web Developer
+                  Matematika - Web Developer
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -254,7 +254,7 @@ desired effect
           <img src="Asset/dist/img/avatar04.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Fadli Muharram</p>
+          <p>Matematika</p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
@@ -265,7 +265,8 @@ desired effect
       <ul class="sidebar-menu">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="index.php"><i class="fa fa-home"></i> <span>Lagrange</span></a></li>
+        <li><a href="index.php"><i class="fa fa-home"></i> Lagrange</a></li>
+        <li><a href="index.php?halaman=kelompok"><i class="fa fa-home"></i> Tugas Kelompok</a></li>
         <!--
         <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
         <li class="treeview">
@@ -296,6 +297,10 @@ desired effect
       if (isset($_GET['halaman'])) {
         if ($_GET['halaman'] == 'hasilLagrange') {
           include_once"Layout/HasilLagrange.php";
+        }elseif ($_GET['halaman'] == 'kelompok') {
+          include_once"Layout/Kelompok/Kelompok.php";
+        }elseif ($_GET['halaman'] == 'hasilkelompok') {
+          include_once"Layout/Kelompok/HasilKelompok.php";
         }
       }else {
         include_once"Layout/Lagrange.php";
@@ -393,6 +398,15 @@ desired effect
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
+
+  <?php
+    $chartX = [];
+    $chartY = [];
+    foreach ($_SESSION['getfxReiman'] as $key => $value) {
+      $chartX[] = $key;
+      $chartY[] = $value;
+    }
+   ?>
 </div>
 <!-- ./wrapper -->
 
@@ -404,6 +418,13 @@ desired effect
 <script src="<?=BaseURL;?>Asset/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?=BaseURL;?>Asset/dist/js/app.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<?php
+  echo '<script type="text/javascript">';
+  echo "var chartX = " . json_encode($chartX) . ";";
+  echo "var chartY = " . json_encode($chartY) . ";";
+  echo '</script>';
+ ?>
 <script src="<?=BaseURL;?>Asset/My.js"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
